@@ -1,0 +1,422 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    background-color: #202020;
+    padding-top: 56px;
+}
+nav {
+    position: fixed;          
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    background-color: #2b2b2b;
+    z-index: 1000;            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); 
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    gap: 1.5rem; 
+}
+
+nav ul li {
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li:hover {
+    background-color: #424242;
+    transform: scale(1.05);
+}
+
+nav ul a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover{
+    color: #69F0AE;
+}
+
+/*Inicio*/
+#inicio {
+    min-height: 100vh;
+    padding: 80px 450px;
+    background-color: #202020;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.inicio-l {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.inicio-l h1 {
+    font-size: 55px;
+    color: white;
+}
+
+.inicio-l h3 {
+    font-size: 30px;
+    color: #00af49;
+}
+
+.inicio-l p {
+    font-size: 18px;
+    color: #BDBDBD;
+    line-height: 1.5;
+}
+
+.btns-inicio {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botones */
+.linke {
+    padding: 15px 25px;
+    background-color: #00af49;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.linke:hover {
+    background-color: #00963e;
+}
+
+.habi {
+    border: 2px solid #00af49;
+    padding: 15px 25px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.habi:hover {
+    background-color: #00af49;
+    color: white;
+}
+
+/* Figuras geométricas */
+.decorativo-geo {
+    position: relative;
+    width: 250px;
+    height: 300px;
+}
+
+.geo-rect {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background-color: rgba(0, 175, 73, 0.08);
+    transform: rotate(25deg);
+    top: 20px;
+    left: 30px;
+    border: 2px solid rgba(0, 175, 73, 0.3);
+    border-radius: 12px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.geo-tri {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 140px solid rgba(255, 255, 255, 0.03);
+    top: 100px;
+    left: 60px;
+    transform: rotate(-15deg);
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Animación */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    #inicio {
+        padding: 80px 100px;
+    }
+
+    .inicio-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .decorativo-geo {
+        margin-top: 40px;
+        align-self: center;
+    }
+}
+
+
+
+/*Habilidades*/
+#habilidades {
+    background-color: #2b2b2b;
+    padding: 80px 450px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#habilidades h2 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 60px;
+}
+
+.card-habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: repeat(2, auto);   /* 2 filas */
+    gap: 1.5rem;
+}
+
+/* Estilo base para todas las cartas */
+.card-habilidades > div {
+    background-color: #202020;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Imagen dentro de las cartas */
+.card-habilidades img {
+    width: 70px;
+    margin-bottom: 15px;
+}
+
+/* Título y nivel */
+.card-habilidades h4 {
+    margin-bottom: 10px;
+    color: #BDBDBD;
+}
+
+.card-habilidades p {
+    font-weight: 600;
+    color: white;
+}
+
+/* HOVER con sombra de color personalizada */
+.card-habilidades .html:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(239, 101, 42, 0.6); 
+}
+
+.card-habilidades .css:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(28, 136, 199, 0.6);
+}
+
+.card-habilidades .javascript:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(251, 222, 52, 0.6); 
+}
+.card-habilidades .php:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(90, 106, 157, 0.6); 
+}
+
+.card-habilidades .sql:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(66, 139, 199, 0.6); 
+}
+
+.card-habilidades .figma:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(162, 89, 255, 0.6); 
+}
+
+.card-habilidades .card-scrum:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 230, 200, 0.6); 
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    #habilidades {
+        padding: 80px 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-habilidades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .card-habilidades {
+        grid-template-columns: 1fr;
+    }
+
+    #habilidades {
+        padding: 50px 20px;
+    }
+}
+
+/*Educacion*/
+#educacion{
+    padding: 50px 450px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+#educacion div{
+    margin: 30px 0;
+}
+#educacion h2{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+.universidad{
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 0 10px #181818;
+}
+.universidad h4{
+    font-size: 20px;
+    color: white;
+    padding-bottom: 7px;
+}
+.universidad h3{
+    font-size: 17px;
+    color: #00af49;
+    padding-bottom: 20px;
+}
+.universidad p{
+    font-size: 15px;
+    color: #BDBDBD;
+}
+
+.secundaria{
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 0 10px #181818;
+}
+.secundaria h4{
+    font-size: 20px;
+    color: white;
+    padding-bottom: 7px;
+}
+.secundaria h3{
+    font-size: 17px;
+    color: #00af49;
+    padding-bottom: 20px;
+}
+.secundaria p{
+    font-size: 15px;
+    color: #BDBDBD;
+}
+
+.scrum{
+    background-color: #2b2b2b;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 0 10px #181818;
+}
+.scrum h4{
+    font-size: 20px;
+    color: white;
+    padding-bottom: 7px;
+}
+.scrum h3{
+    font-size: 17px;
+    color: #00af49;
+    padding-bottom: 20px;
+}
+.scrum p{
+    font-size: 15px;
+    color: #BDBDBD;
+}
+footer {
+    background-color: #2b2b2b;
+    padding: 25px 20px;
+}
+
+footer h3 {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.rel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.iconos {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    color: #bdbdbd;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+/* Hover individual por red */
+.icon.gmail:hover {
+    color: #EA4335; 
+}
+.icon.linkedin:hover {
+    color: #0A66C2; 
+}
+.icon.github:hover {
+    color: #ffffff; 
+}
